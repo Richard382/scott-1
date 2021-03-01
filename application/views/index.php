@@ -102,6 +102,7 @@
 </head>
 
 <body>
+    
     <section class="menu cid-sn35GUFUrF" once="menu" id="menu1-0">
         <nav
             class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
@@ -149,6 +150,7 @@
                             href="index.html#form4-1" data-toggle="dropdown-submenu"
                             aria-expanded="true">Language&nbsp;</a>
                         <div class="dropdown-menu">
+                             
                             <a class="text-white dropdown-item display-4" onclick="changetoGerman()" >German</a>
                             <a class="text-white dropdown-item display-4" onclick="changetoEnglish()" aria-expanded="false">English</a>
                         </div>
@@ -201,14 +203,7 @@
                     <h3 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-2">Word
                         Collages</h3>
                     <div class="mbr-section-text mbr-white pb-3 ">
-                        <p class="mbr-text mbr-fonts-style display-7">“Intro” In the first two options, the aim of the game is to create a word collage, a poem
-                            or a situation with words from all the words. All words should be used. When it comes
-                            to repositioning and putting words together, new spaces open up to create unusual
-                            sentences. Using lateral thinking is encouraged by playing within the limits. The
-                            emptiness and gap between words and sentences can develop their own
-                            expressiveness. You may suddenly notice that a new logic is emerging. The third
-                            variation is dedicated to the same principle only you use sentences instead of words,
-                            also known as the cut-up „technique.
+                        <p class="mbr-text mbr-fonts-style display-7"><?= $this->lang->line('intro')?>
                             <br>
                             
                          
@@ -222,7 +217,7 @@
     </section>
 
     <section class="counters1 counters cid-sn6SMRfOEX" id="counters1-f">
-    <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-2" style="padding-top:20px;">Inspired by&nbsp;</h1>
+    <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-2" style="padding-top:20px;"><?= $this->lang->line('inspiredBy');?></h1>
         <div class="container">
             <div class="container pt-4 mt-2">
                 <div class="media-container-row">
@@ -306,39 +301,23 @@
                         <div class="text-container col-lg-6 english">
 
                             <h2>Option 1</h2>
-                            <p>Using Random words</p>
+                            <p><?= $this->lang->line('instruction')?></p>
                             <ol id="instruction">
-                            <li>Read this information</li>
+                            <li><?= $this->lang->line('option1_1');?></li>
 
-                                <li>Select the number of words you want to use</li>
+                                <li><?= $this->lang->line('option1_2');?></li>
                                 
-                                <li>Press the "START" button</li>
+                                <li><?= $this->lang->line('option1_3');?></li>
                                 
-                                <li>A user interface will open. You can now line up the words in any way you like by "clicking" and "dragging" them and bringing them together.</li>
+                                <li><?= $this->lang->line('option1_4');?></li>
                                 
-                                <li>When you have placed all the words and are satisfied with your word collage, you can press the "PRINT" button. This will create a JPG that you can download to your computer.</li>
+                                <li><?= $this->lang->line('option1_5');?></li>
                                 
-                                <li>Exception - "all words": After a long struggle with the words, but never giving up too early, you may decide yourself not to use 1- 4 words.</li>
+                                <li><?= $this->lang->line('option1_6');?></li>
                             </ol>
                         </div>
-                        <div class="text-container col-lg-6 germany" hidden>
-
-                            <h2>Option 1</h2>
-                            <p>Using Random words</p>
-                            <ol id="instruction">
-                            <li>Read this information</li>
-
-                                <li>Select the number of words you want to use</li>
-                                
-                                <li>Press the "START" button</li>
-                                
-                                <li>A user interface will open. You can now line up the words in any way you like by "clicking" and "dragging" them and bringing them together.</li>
-                                
-                                <li>When you have placed all the words and are satisfied with your word collage, you can press the "PRINT" button. This will create a JPG that you can download to your computer.</li>
-                                
-                                <li>Exception - "all words": After a long struggle with the words, but never giving up too early, you may decide yourself not to use 1- 4 words.</li>
-                            </ol>
-                        </div>
+                      
+                        
                         <div class="circle-container">
                             <div class = "circle">
                                 <p class="no">1.</p>
@@ -353,53 +332,29 @@
                     <div class="container row justify-content-around">
                         <div class="text-container col-lg-6 english">
                             <h2>Option 2</h2>
-                            <p>Using your own text</p>
+                            <p><?= $this->lang->line('option2_title');?></p>
+                            <p><?= $this->lang->line('instruction');?></p>
                             <ol id="instruction">
-                                <li>Select option </li>
+                                <li><?= $this->lang->line('option2_1')?></li>
 
-                                <li>Enter a text in the text box: Type it in yourself or by copy & paste: Your own
-                                    poems, lyrics, copied text from articles or individual words that you write into
-                                    the text box. It is advisable to enter fewer words at the beginning. Make sure
-                                    to enter enough nouns, adjectives and verbs instead too many words like
-                                    "the", „a/an", "and", „he/she/it„ etc.</li>
+                                <li><?= $this->lang->line('option2_2')?></li>
                                 
-                                <li>After putting in your text, press the "SAVE" button</li>
+                                <li><?= $this->lang->line('option2_3')?></li>
                                 
-                                <li>The user interface or the paper opens. The words from the inserted text
-                                    appear in the boxes. You can now line up the words in any way you like by
-                                    "clicking" and "dragging" and bringing them together in order.</li>
+                                <li><?= $this->lang->line('option2_4')?></li>
                                 
-                                <li>When you have placed all the words and are satisfied with your word
-                                    collage, you can press the "COMPLETE" button. This enables you to create a
-                                    JPG, PDF file of your word collage that you can then download to your
-                                    computer.</li>                                
+                                <li><?= $this->lang->line('option2_5')?></li>                                
+
+                                <li><?= $this->lang->line('option2_6')?></li>
+                                
+                                <li><?= $this->lang->line('option2_7')?></li>
+                                
+                                <li><?= $this->lang->line('option2_8')?></li>
+                                
+                                <li><?= $this->lang->line('option2_9')?></li>                                
                             </ol>
                         </div>
-                        <div class="text-container col-lg-6 germany" hidden>
-                            <h2>Option 2</h2>
-                            <p>Eigene Texte eingeben</p>
-                            <ol id="instruction">
-                                <li>Wählen Sie Option 2 aus </li>
-
-                                <li>EGeben Sie in den Textkasten einen Text ein: Selbst eintippen oder per Copy &
-                                    Paste: Eigene Gedichte, Songtexte, Kopierter Text aus Artikeln oder einzelne
-                                    Worte, die sie in den Textkaste schreiben. Es empfiehlt sich am Anfang weniger
-                                    Worte einzugeben. Darauf achten genug Substantive, Adjektive und Verben
-                                    einzugeben anstatt zu viele Worte wie „das“, „ein“, „und“, „er“ ect.</li>
-                                
-                                <li>Drücken Sie die "SAVE" -Taste</li>
-                                
-                                <li>Die Benutzeroberfläche bzw. das Papier wird geöffnet. In den Kästen
-                                    erscheinen die Worte aus ihrem eingefügten Text. Sie können die Worte nun in
-                                    beliebige Art und Weise durch „Anklicken“ und „Ziehen“ neu aneinander reihen
-                                    und miteinander in Verbindung bringen.</li>
-                                
-                                <li>Wenn Sie alle Worte untergebracht haben und zufrieden mit ihrer Wortcollage
-                                    sind, können sie die Taste "COMPLETE" drücken. Dadurch können Sie eine
-                                    JPG, PDF Datei ihrer Collage erstellen, die Sie auf Ihren Computer
-                                    herunterladen können.</li>                                
-                            </ol>
-                        </div>
+                        
                         <div class="circle-container col-lg-6">
                             <div class = "circle">
                                 <p class="no">2.</p>
@@ -415,59 +370,32 @@
                     <div class="container row justify-content-around">
                         <div class="text-container col-lg-6 english">
                             <h2>Option 3</h2>
-                            <p>Enter whole sentences</p>
+                            <p><?= $this->lang->line('option3_title');?></p>
+                            <p><?= $this->lang->line('instruction');?></p>
+                            <p><strong><?= $this->lang->line('option3_brief');?></strong></p>
                             <ol id="instruction">
 
-                                <li>Select option 3. This option corresponds to the cut-up technique described in the
-                                    videos where David Bowie explains his process.</li>
+                                <li><?=$this->lang->line('option3_1'); ?></li>
                                 
-                                <li>Enter a sentence in the “+ Add” text box: Type it yourself or copy & paste.</li>
+                                <li><?=$this->lang->line('option3_2'); ?></li>
                                 
-                                <li>Press the "+ Add" button. The sentence you entered now appears in the bar.</li>
+                                <li><?=$this->lang->line('option3_3'); ?></li>
                                 
-                                <li>You can use this method to enter and add further sentences.</li>
+                                <li><?=$this->lang->line('option3_4'); ?></li>
                                 
-                                <li>You can also delete individual sentences "- red button" or edit them by clicking in the box.</li>
+                                <li><?=$this->lang->line('option3_5'); ?></li>
 
-                                <li>When you have entered all your sentences press "Save". When you press the "Save" button, these sentences appear in boxes on the sheet of paper.</li>
+                                <li><?=$this->lang->line('option3_6'); ?></li>
 
-                                <li>After the user interface or the paper has opened, you can now line up the sentences in any way you like by "clicking" and "dragging" and bringing them together.</li>
+                                <li><?=$this->lang->line('option3_7'); ?></li>
 
-                                <li>When you have placed all the sentences and are satisfied with your text/poem/ lyric, you can press the "COMPLETE" button. This enables you to create a JPG, PDF file from your text that you can download to your computer.</li>
+                                <li><?=$this->lang->line('option3_8'); ?></li>
+
+                                <li><?=$this->lang->line('option3_9'); ?></li>
 
                             </ol>
                         </div>
-                        <div class="text-container col-lg-6 germany" hidden>
-                            <h2>Option 3</h2>
-                            <p>Ganze Sätze eingeben</p>
-                            <ol id="instruction">
 
-                                <li>Wählen Sie Option 3 aus. Diese Option entspricht der Cut-up Technik
-                                    beschrieben in den Videos von u.a. David Bowie.</li>
-                                
-                                <li>Geben Sie in den Textkasten „+ Add“ einen Satz ein: Selbst eintippen oder per Copy & Paste</li>
-                                
-                                <li>Drücken Sie die „+ Add“ -Taste. Der eingeben Satz erscheint nun in der Leiste.</li>
-                                
-                                <li>Nach dieser Methode können Sie weitere Sätze eingeben und hinzufügen.</li>
-                                
-                                <li>Des Weiteren können Sie einzelne Sätze wieder löschen „- rote Button“ oder
-                                    editieren durch in den Kasten klicken.</li>
-
-                                <li>Wenn Sie all ihre Sätze eingegeben haben und drücken Sie „Save“. Mit Drücken
-                                    der „Save“ - Taste erscheinen diese Sätze in Kästen auf dem Blatt Papier.</li>
-
-                                <li>Nachdem die Benutzeroberfläche bzw. das Papier sich geöffnet hat, können Sie
-                                        nun die Sätze in beliebige Art und Weise durch „Anklicken“ und „Ziehen“ neu
-                                        aneinander reihen und miteinander in Verbindung bringen.</li>
-
-                                <li>Wenn Sie alle Sätze untergebracht haben und zufrieden mit ihrer Satzschöpfung,
-                                    ihrem Gedicht, ihrem Liedtext sind, können sie die Taste "COMPLETE" drücken.
-                                    Dadurch können Sie eine JPG, PDF Datei ihrer Collage erstellen, die Sie auf Ihren
-                                    Computer herunterladen können.</li>
-
-                            </ol>
-                        </div>
                         <div class="circle-container col-lg-6">
                             <div class = "circle">
                                 <p class="no">3.</p>
@@ -542,21 +470,21 @@
         <div class="container">
             <div class="media-container-row">
                 <div class="media-content px-3 align-self-center mbr-white py-2">
-                    <p class="mbr-text testimonial-text mbr-fonts-style display-7"><strong><br>ABOUT
-                        </strong><br>The Studio offers live and online acting and directing workshops, masterclasses and private coachings with internationally renowned tutors, coaches and directors from the US, the UK, Australia and New Zealand.<br><br><strong>UI/UX Designer &amp; Web Developer.
-                        </strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
+                    <p class="mbr-text testimonial-text mbr-fonts-style display-7">
+                        <br><?= $this->lang->line('about_top_brief');?><br><br>
+                          <strong><?= $this->lang->line('about_inspirations');?></strong>
+                          <br>
+                    </p>
+                          <ol class="mbr-text testimonial-text mbr-fonts-style display-7">
+                              <li ><?= $this->lang->line('about_li_1');?></li>
+
+                              <li><?= $this->lang->line('about_li_2');?></li>
+
+                              <li><?= $this->lang->line('about_li_3');?></li>
+                          </ol>
                         <br>
-                        <br>Website: https://www.schott-acting-studio.de
-                        <br>City: Berlin : German
-                        <br><br>Degree: Master
-                        <br>PhEmailone: email@example.com
-                        <br>Freelance: Available
-                        <br><br>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt
-                        adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-                        Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque
-                        neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni
-                        laudantium dolores
+                        <p class="mbr-text testimonial-text mbr-fonts-style display-7">
+                        <?= $this->lang->line('about_bottom_brief');?>
                     </p>
                     <p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7"></p>
                     <p class="mbr-author-desc mbr-fonts-style display-7"></p>
@@ -596,7 +524,7 @@
                     </div>
                     <div data-form-type="formoid">
                         <!---Formbuilder Form--->
-                        <form action="https://mobirise.com/" method="POST" class="mbr-form form-with-styler"
+                        <form  method="POST" onsubmit="false" class="mbr-form form-with-styler"
                             data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true"
                                 value="0Y/alNRDmpuYhzRyYCTJp1/cgCmX+D8pnyCZb+pb1kDsWmpYIHfmzRsYb1x50sTW8nx82OFFFD5BnlW0E0Xgo8RLw9t2oeZ+jUIOzVIhBnw62B328wjAYpWS7LNGX9Oz">
                             <div class="row">
@@ -608,18 +536,19 @@
                             <div class="dragArea row">
                                 <div class="col-md-12  form-group" data-for="name">
                                     <input type="text" name="name" placeholder="Your Name" data-form-field="Name"
-                                        required="required" class="form-control input display-7" id="name-form4-1">
+                                        required="required" class="form-control input display-7" id="form-name">
                                 </div>
                                 <div data-for="email" class="col-md-12  form-group">
                                     <input type="text" name="email" placeholder="Email" data-form-field="Email"
-                                        class="form-control input display-7" required="required" id="email-form4-1">
+                                        class="form-control input display-7" required="required" id="form-email">
                                 </div>
                                 <div data-for="message" class="col-md-12  form-group">
-                                    <textarea name="message" placeholder="Message" data-form-field="Message"
-                                        class="form-control input display-7" id="message-form4-1"></textarea>
+                                    <textarea name="message" placeholder="Message" data-form-field="Message" required="required"
+                                        class="form-control input display-7" id="form-message"></textarea>
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6LdF42waAAAAABxfWUHK2iKl9jD-JumGy7JP8Vsx"></div>
                                 <div class="col-md-12 input-group-btn  mt-2 align-center">
-                                    <button type="submit" class="btn btn-primary btn-form display-4">SEND
+                                    <button type="submit" class="btn btn-primary btn-form display-4" onclick="sendmail()">SEND
                                         MESSAGE</button>
                                 </div>
                             </div>
@@ -732,7 +661,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="<?php echo base_url();?>assets/web/assets/jquery/jquery.min.js"></script>
     <!-- <script src="assets/popper/popper.min.js"></script> -->
     <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
@@ -756,13 +685,37 @@
     <script>
         function changetoGerman()
         {
-            $('.english').attr('hidden', true);
-            $('.germany').removeAttr('hidden');
+
+            var url = "<?= site_url('LanguageSwitcher/switchLang/german');?>";
+            jQuery.post(url, {
+            }, function(data) {
+                location.reload();
+            }).fail(function(jqXHR) {
+                alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
+            });
+           
         }
         function changetoEnglish()
         {
-            $('.germany').attr('hidden', true);
-            $('.english').removeAttr('hidden');
+            var url = "<?= site_url('LanguageSwitcher/switchLang/english');?>";
+            jQuery.post(url, {
+            }, function(data) {
+                location.reload();
+            }).fail(function(jqXHR) {
+                alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
+            });
+        }
+
+        function sendmail() 
+        {
+            if($('#form-name').val() == '' || $('#form-email').val() == '' || $('#form-message').val() == '') return;
+            var url = "<?= site_url('Sendmail/sendEmail');?>";
+            jQuery.post(url, {
+            }, function(data) {
+                alert(data);
+            }).fail(function(jqXHR) {
+                alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
+            });
         }
     </script> 
 
