@@ -126,15 +126,9 @@ $arrID_bysentence = "";
                     <label for="id_option1" class="label_option">Option 1 </label>
                 </div>
                 <div id="random_form">
-
-                    <label style="padding-left:30px;">Words:</label><span id='word'>15</span>
-                    <input type="number" hidden value="15" id="edit_word" min="1" max="75" />
-                    <div style="text-align:right;flex-grow: 1;">
-                        <a id="edit_random_form" style="cursor:pointer" onclick="edit_random_form()">Edit</a>
-                        <a id="save_random_form" style="cursor:pointer" hidden onclick="save_random_form()">Save</a>
-                    </div>
+                    <label style="padding-left:30px;">Words:</label>
+                    <input type="number" value="15" id="word" min="1" max="75" />
                 </div>
-
                 <div class="inputGroup">
                     <input id="id_option2" name="radio_mode" value="custom_mode" type="radio" />
                     <label for="id_option2" class="label_option">Option 2 </label>
@@ -190,10 +184,7 @@ $arrID_bysentence = "";
         </div>
         <div class="col-xl-2  pt-4 pt-lg-0 vertical-buttons-container" data-aos="fade-left" data-aos-delay="200" style="margin-top: 5%; text-align:center; ">
             <div class="btn-group-vertical" id="verticalbutton">
-                <div id="ten-countdown">
-                    <span id="min"></span>
-                    <span id="sec"></span>
-                </div>
+                
                 <div class="M-button col">
                     <a href="#" class="Start-Button" id="startButton">
                         <p><span class="bg"></span>
@@ -227,6 +218,10 @@ $arrID_bysentence = "";
                         </p>
                     </a>
                 </div>
+                <div id="ten-countdown">
+                    <span id="min"></span>
+                    <span id="sec"></span>
+                </div>
             </div>
         </div>
 
@@ -244,29 +239,30 @@ $arrID_bysentence = "";
                 <div class="modal-body">
                     <div class="header">
                         <ul>
-                            <li>
-                                <input type="radio" name="mode" id="id_modal_edit_text" value="edit" checked>
-                                <label for="id_modal_edit_text">Edit Sentence</label>
-
-                                <div class="check"></div>
-                            </li>
-                            <li>
-                                <input type="radio" name="mode" id="id_modal_add_text" value="add">
+                          <li>
+                                <input type="radio" name="mode" id="id_modal_add_text" value="add" checked>
                                 <label for="id_modal_add_text">Add Text</label>
 
                                 <div class="check">
                                     <div class="inside"></div>
                                 </div>
                             </li>
+                            <li>
+                                <input type="radio" name="mode" id="id_modal_edit_text" value="edit" >
+                                <label for="id_modal_edit_text">Edit Sentence</label>
+
+                                <div class="check"></div>
+                            </li>
+                           
                         </ul>
                     </div>
 
-                    <div class="modal_edit_text" style=" padding: 20px 0px;">
+                    <div class="modal_edit_text" style=" padding: 20px 0px;" hidden>
                         <select name="sentences" id="id_modal_select" style="width:30%; height:30px;">
                         </select>
                         <textarea name="modal_edit_textarea" id="id_modal_edit_textarea" cols="30" rows="4"></textarea>
                     </div>
-                    <div class="modal_add_text" style="justify-content: space-evenly; padding: 20px 0px;" hidden>
+                    <div class="modal_add_text" style="justify-content: space-evenly; padding: 20px 0px;" >
                         <div>
                             <label for="new_title">New Title</label>
                             <input type="text" name="newTitle" id="new_title">
@@ -279,9 +275,9 @@ $arrID_bysentence = "";
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="removeBtn2" style="position:absolute; left:10px;" data-dismiss="modal">Delete</button>
-                    <button type="button" class="btn btn-primary" id="saveBtn2" data-dismiss="modal">Save</button>
-                    <button type="button" class="btn btn-primary" id="addBtn2" hidden>Add</button>
+                    <button type="button" class="btn btn-danger" id="removeBtn2" hidden style="position:absolute; left:10px;" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-primary" id="saveBtn2" hidden data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-primary" id="addBtn2" >Add</button>
                     <button type="button" class="btn btn-secondary" id="cancelBtn" data-dismiss="modal">Cancel</button>
                 </div>
 
@@ -294,12 +290,11 @@ $arrID_bysentence = "";
             <div class="list">
                 <!-- TAbs Menu -->
                 <div class="btn-group tabs" role="group" aria-label="group">
+                    <button type="button" class="btn" value="new-tab">New</button>    
                     <button type="button" class="btn" value="edit-tab">Edit</button>
-                    <button type="button" class="btn" value="new-tab">New</button>
                 </div>
-
                 <!-- Start edit tab -->
-                <div class="edit-tab tab">
+                <div class="edit-tab tab" hidden>
                     <span class='close-modal3' onclick="closeModal3()"><i class="fas fa-plus"></i></span>
                     <div class="upper">
                         <input type="text" id="add-sentence-text">
@@ -342,7 +337,7 @@ $arrID_bysentence = "";
                 <!-- END edit tab -->
                 <!-- START "add new" tab -->
 
-                <div class="new-tab tab" hidden>
+                <div class="new-tab tab" >
                     <div class="upper">
                         <div>
                             <label for="new-tab-title">Title:</label>
@@ -367,7 +362,7 @@ $arrID_bysentence = "";
                                 <span><i class="far fa-check-circle"></i></span>
                                 <p>Add new</p>
                             </button>
-                            <button class="cancel btn btn-danger">Cancel</button>
+                            <button class="cancel btn btn-danger" onclick="closeModal3()">Cancel</button>
                         </div>
 
                     </div>
@@ -521,7 +516,7 @@ $arrID_bysentence = "";
                 function() {
                     reheight();
                 }, 800);
-
+            console.log( countOfWord);
             makeWords(words, countOfWord);
             resetTimer(init_timer);
             Clock.start();
@@ -1033,6 +1028,39 @@ $arrID_bysentence = "";
     jQuery('#edit_time').bind('input', function() {
         init_timer = jQuery(this).val(); // get the current value of the input field.
     });
+
+    jQuery('#word').bind('input', function() {
+        countOfWord = jQuery(this).val(); // get the current value of the input field.
+    });
+
+    jQuery('#new-tab-add-sentence-text').bind('input', function() {
+       
+       restText = jQuery(this).val();
+       while(restText.length > 12)
+       {
+        if(jQuery(this).val().length > 12) 
+        {
+            restText = jQuery(this).val().substring(12, jQuery(this).val().length -1);
+            addSubsentence(jQuery(this).val().substring(0,11));
+            jQuery(this).val(restText);
+        }
+       }
+    });
+
+    jQuery('#add-sentence-text').bind('input', function() {
+       
+       restText = jQuery(this).val();
+       while(restText.length > 12)
+       {
+        if(jQuery(this).val().length > 12) 
+        {
+            restText = jQuery(this).val().substring(12, jQuery(this).val().length -1);
+            addSentence(jQuery(this).val().substring(0,11));
+            jQuery(this).val(restText);
+        }
+       }
+    })
+
 
     jQuery(".list .tabs button").click(function() /* SWitch between tabs in modal 3 */ {
         var tabs = document.querySelectorAll(".tab"),

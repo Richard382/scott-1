@@ -298,7 +298,7 @@
             <!-- Option 1 -->
                 <article class="container-fluid">
                     <div class="container row justify-content-around">
-                        <div class="text-container col-lg-6 english">
+                        <a class="text-container col-lg-6" href="<?php echo site_url('homecontroller/NewGame') ?>">
 
                             <h2>Option 1</h2>
                             <p><?= $this->lang->line('instruction')?></p>
@@ -315,7 +315,7 @@
                                 
                                 <li><?= $this->lang->line('option1_6');?></li>
                             </ol>
-                        </div>
+                        </a>
                       
                         
                         <div class="circle-container">
@@ -330,7 +330,7 @@
 
                 <article class="container-fluid">
                     <div class="container row justify-content-around">
-                        <div class="text-container col-lg-6 english">
+                        <a class="text-container col-lg-6" href="<?php echo site_url('homecontroller/NewGame') ?>">
                             <h2>Option 2</h2>
                             <p><?= $this->lang->line('option2_title');?></p>
                             <p><?= $this->lang->line('instruction');?></p>
@@ -353,7 +353,7 @@
                                 
                                 <li><?= $this->lang->line('option2_9')?></li>                                
                             </ol>
-                        </div>
+                        </a>
                         
                         <div class="circle-container col-lg-6">
                             <div class = "circle">
@@ -368,7 +368,7 @@
                 
                 <article class="container-fluid">
                     <div class="container row justify-content-around">
-                        <div class="text-container col-lg-6 english">
+                        <a class="text-container col-lg-6" href="<?php echo site_url('homecontroller/NewGame') ?>">
                             <h2>Option 3</h2>
                             <p><?= $this->lang->line('option3_title');?></p>
                             <p><?= $this->lang->line('instruction');?></p>
@@ -394,7 +394,7 @@
                                 <li><?=$this->lang->line('option3_9'); ?></li>
 
                             </ol>
-                        </div>
+                        </a>
 
                         <div class="circle-container col-lg-6">
                             <div class = "circle">
@@ -405,17 +405,12 @@
                 </article>
 
                 <div style="margin:auto;" class="btn-start-container">
-                    <!-- <a href="<?php echo site_url('homecontroller/NewGame') ?>" class=" btn-start">
-                        <span>Start</span>
-                    </a> -->
-
                     <a href="<?php echo site_url('homecontroller/NewGame') ?>" class=" btn-start">
                         <span class="circle" aria-hidden="true">
                         <span class="icon arrow"></span>
                         </span>
                         <span class="button-text">Start</span>
                     </a>
-
                 </div>
 
 
@@ -712,7 +707,6 @@
             var url = "<?= site_url('Sendmail/sendEmail');?>";
             jQuery.post(url, {
             }, function(data) {
-                alert(data);
             }).fail(function(jqXHR) {
                 alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
             });

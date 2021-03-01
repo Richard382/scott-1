@@ -149,6 +149,7 @@ text-align: center;
      display:block;
  }
  canvas {
+    filter:grayscale(100%);
      position: absolute;
      top:0px;
      left:0px;
