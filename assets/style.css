@@ -146,11 +146,21 @@ text-align: center;
 
  canvas {
      position: absolute;
-     top:40px;
-     left:30px;
+     top:0px;
+     left:0px;
+     width:210mm;
+     height:100%;
       visibility: visible; 
       -webkit-print-color-adjust: exact;
     }
+
+    @page {
+        size: A4;
+        margin: 0;
+      }
+
+     
+
 
 }
 
@@ -177,7 +187,7 @@ text-align: center;
 .clasin5 {background: #5c492b !important;color:#fff; display: block; float: left !important;}
 .clasin6 {background: #ccffff !important;color:#669999; display: block; float: left !important;}
 .clasin7 {background: url(bg-game/Untitled-0.png) center / cover !important;color:#336699; display: block; float: left !important;}
-.clasin8 {background: #efe7e4; color:#b3d7ff !important; display: block; float: left !important;}
+.clasin8 {background: #efe7e4; color:#300469 !important; display: block; float: left !important;}
 .clasin9 {background: url(bg-game/Untitled-4.png) center / cover !important;color:#000; display: block; float: left !important;}
 .clasin10 {background:#fff !important;color:#99cc66; display: block; float: left !important;}
 .clasin11 {background:#dab948 !important;color:#244643; display: block; float: left !important;}
@@ -1368,3 +1378,10 @@ div.M-button a#pauseButton > p {
 div.M-button a#pauseButton > p span.base {
     border: 1px solid transparent;
 }
+
+#word
+{
+    padding-left:10px;
+    font-size:20px;
+}
+

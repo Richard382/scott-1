@@ -22,6 +22,7 @@ class homecontroller extends CI_Controller {
 	function __construct() {
         parent::__construct();
 		$this->load->model("home_model");
+		// $this->lang->load('information','english');
     }
 
 	public function index()

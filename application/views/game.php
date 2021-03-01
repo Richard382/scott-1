@@ -34,8 +34,7 @@ if (isset($random_word_en)) {
     }
 }
 
-if(isset($random_word_de))
-{
+if (isset($random_word_de)) {
     $random_data_de = $random_word_de[0];
 
     for ($i = 0; $i < count($random_data_de); $i++) {
@@ -79,38 +78,6 @@ $arrtext_bysentence = "";
 $arrID_byword = "";
 $arrID_bysentence = "";
 
-if(isset($sentence_by_word)){
-    $sentenceByWord = $sentence_by_word[0];
-    for($i = 0; $i < count($sentenceByWord); $i++)
-    {
-        array_push($array_title_byword, $sentenceByWord[$i]->title);
-        array_push($array_sentence_byword, $sentenceByWord[$i]->text);
-        array_push($array_id_byword, $sentenceByWord[$i]->id);
-    }
-}
-if(isset($sentence_by_sentence)){
-    $sentenceBysentence = $sentence_by_sentence[0];
-    for($i = 0; $i < count($sentenceBysentence); $i++)
-    {
-        array_push($array_title_bysentence, $sentenceBysentence[$i]->title);
-        array_push($array_sentence_bysentence, $sentenceBysentence[$i]->text);
-        array_push($array_id_bysentence, $sentenceBysentence[$i]->id);
-    }
-}
-
-for ($k = 0; $k < count($array_title_byword); $k++) {
-    $arrtext_byword .= "'" . $array_sentence_byword[$k] . "', ";
-    $arrtitle_byword .= "'" . $array_title_byword[$k] . "', ";
-    $arrID_byword .= "'" . $array_id_byword[$k] . "', ";
-}
-
-for($k = 0; $k < count($array_title_bysentence); $k++)
-{
-    $arrtext_bysentence .= "'" . $array_sentence_bysentence[$k] . "', ";
-    $arrtitle_bysentence .= "'" . $array_title_bysentence[$k] . "', ";
-    $arrID_bysentence .= "'" . $array_id_bysentence[$k] . "', ";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -135,9 +102,9 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
     <link rel='stylesheet' id='_s-style-css' href='<?php echo base_url(); ?>assets/style.css?ver=5.6' type='text/css' media='all' />
 </head>
 
-<body style="z-index:2;">
- 
-    <div id="page" class="hfeed site row" style="z-index:2;">
+<body >
+
+    <div id="page" class="hfeed site row" >
         <div class="col-xl-2 col-lg-3" data-aos="fade-right" data-aos-delay="100" style="margin-top:5%;padding:0;">
 
             <form class="form">
@@ -159,12 +126,9 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
                     <label for="id_option1" class="label_option">Option 1 </label>
                 </div>
                 <div id="random_form">
-                    <label>Time:</label>
-                    <span style="width:20px" id='time'>15</span>
-                    <input type="number" hidden value="15" id="edit_time" min="1" max="60" style="width:40px" />
-                    <span>min</span>
-                    <label>Words:</label><span id='word' style="width:20px">15</span>
-                    <input type="number" hidden value="15" id="edit_word" min="1" max="75" style="width:40px" />
+
+                    <label style="padding-left:30px;">Words:</label><span id='word'>15</span>
+                    <input type="number" hidden value="15" id="edit_word" min="1" max="75" />
                     <div style="text-align:right;flex-grow: 1;">
                         <a id="edit_random_form" style="cursor:pointer" onclick="edit_random_form()">Edit</a>
                         <a id="save_random_form" style="cursor:pointer" hidden onclick="save_random_form()">Save</a>
@@ -194,6 +158,11 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
                         <a id="edit_sentence_option3" style="margin-top:0; cursor:pointer;width:auto">Edit</a> <!-- M-deleted "style=color:red" -->
                     </div>
                 </div>
+                <h5>
+                    <span class="text-success">Time limit: </span>
+                    <input type="number" clss="text-danger" value="15" id="edit_time" min="1" max="60" />
+                    <span class="text-danger">min</span>
+                </h5>
             </form>
 
         </div>
@@ -206,13 +175,13 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
                         </div>
                         <p id="selectednum"></p>
                     </div>
-                    
-                    <div id="cardPile" class="open" style="border:none">
-                        <div id="userActions">
+
+                    <div id="cardPile" class="open" style="border:none;">
+                        <div id="userActions" hidden>
                             <p>Drag &amp; Drop Image</p>
                             <input type="file" id="fileUpload" />
                         </div>
-                        <img id="uploadImage" src="" style="width:200px; display:none;" alt="uploaded image placeholder" class="ui-draggable ui-draggable-handle ui-selectee" />    
+                        <img id="uploadImage" src="" style="width:200px; display:none;" alt="uploaded image placeholder" class="ui-draggable ui-draggable-handle ui-selectee" />
                     </div>
                     <div id="trash">Drag and Drop To Remove Words</div>
                     <div class="clear"></div>
@@ -263,7 +232,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
     </div>
     <div id="output"></div>
-    
+
 
     <div class="modal" id="editModal">
         <div class="modal-dialog modal-dialog-scrollable" style="max-width: 700px;">
@@ -372,7 +341,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
                 <!-- END edit tab -->
                 <!-- START "add new" tab -->
-                
+
                 <div class="new-tab tab" hidden>
                     <div class="upper">
                         <div>
@@ -387,7 +356,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
                             </button>
                             <input type="text" id="new-tab-add-sentence-text">
                         </div>
-                        <span class='close-modal3'onclick="closeModal3()"><i class="fas fa-plus"></i></span>            
+                        <span class='close-modal3' onclick="closeModal3()"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="sentences-container">
 
@@ -439,28 +408,19 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
     var array_id_bysentence = [<?= $arrID_bysentence ?>];
 
     function edit_random_form() {
-        jQuery('#edit_time').removeAttr('hidden');
         jQuery('#edit_word').removeAttr('hidden');
-        jQuery('#time').attr('hidden', true);
         jQuery('#word').attr('hidden', true);
         jQuery('#edit_random_form').attr('hidden', true);
         jQuery('#save_random_form').removeAttr('hidden');
     }
 
     function save_random_form() {
-        var time = jQuery('#edit_time').val();
         var word = jQuery('#edit_word').val();
-        jQuery('#edit_time').attr('hidden', true);
         jQuery('#edit_word').attr('hidden', true);
-        jQuery('#time').removeAttr('hidden');
         jQuery('#word').removeAttr('hidden');
         jQuery('#save_random_form').attr('hidden', true);
         jQuery('#edit_random_form').removeAttr('hidden');
-        jQuery('#edit_time').val(time);
-        jQuery('#edit_word').val(word);
-        jQuery('#time').text(time);
         jQuery('#word').text(word);
-        init_timer = time;
         if (jQuery('input[name=radio_language]:checked').val() == 'eng') {
             words = [<?= $arrgmEng ?>];
             countOfWord = word;
@@ -525,7 +485,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
     function initSelects() {
         mainSelect = document.getElementById('select_sentence');
         modalSelect = document.getElementById('id_modal_select');
-        document.getElementById('select_option3').innerHTML="";
+        document.getElementById('select_option3').innerHTML = "";
         mainSelect.innerHTML = "";
         modalSelect.innerHTML = "";
         for (var i = 0; i < array_title_byword.length; i++) {
@@ -539,12 +499,12 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
         }
     }
 
-    
+
 
 
     jQuery(document).ready(function($) {
 
-        makeWords(words, countOfWord);
+        // makeWords(words, countOfWord);
         resetTimer(init_timer);
         jQuery('#id_modal_edit_textarea').val(array_text_byword[0]);
         initSelects();
@@ -555,6 +515,8 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
             jQuery('#cardPile').show(500);
             jQuery('.selc_wrd').hide(500);
             jQuery('.content_outer').hide(500);
+            jQuery('#userActions').removeAttr('hidden');
+            jQuery('#userActions').css('display', 'block');
             setTimeout(
                 function() {
                     reheight();
@@ -565,7 +527,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
             Clock.start();
         }
 
-      
+
 
         jQuery('#print').click(function(e) {
             jQuery('#output').empty();
@@ -575,8 +537,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
 
         jQuery('#startButton').click(function() {
-            if(game_state == "waiting")
-            {
+            if (game_state == "waiting") {
                 removeWords();
                 start();
                 game_state = "playing";
@@ -584,9 +545,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
                             <span class="base"></span>
                             <span class="text">Stop</span>
                         </p>`);
-            }
-            else if(game_state == "playing")
-            {
+            } else if (game_state == "playing") {
                 resetTimer(init_timer);
                 game_state = "waiting";
                 jQuery(this).html(`<p><span class="bg"></span>
@@ -597,7 +556,12 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
         });
         jQuery('#finish').click(function() {
-            window.location.href = '<?= site_url('homecontroller');?>';
+            // window.location.href = '?= //site_url('homecontroller'); ?';
+            jQuery('.isindr').remove();
+            jQuery('#userActions').attr('hidden', true);
+            if (game_state == "playing") jQuery('#startButton').click();
+            jQuery('#uploadImage').attr("src", "");
+            jQuery('#uploadImage').css("display", "none");
         });
         $('[for=id_option1]').click(function() {
             $('#id_mode').html('Random words');
@@ -624,10 +588,10 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
     });
 
     $('#select_option3').change(function() {
-            words = array_text_bysentence[jQuery(this).val()].split('&&');
-            countOfWord = words.length;
-            resetTimer(init_timer);
-        });
+        words = array_text_bysentence[jQuery(this).val()].split('&&');
+        countOfWord = words.length;
+        resetTimer(init_timer);
+    });
 
     $('#id_modal_select').change(function() {
         jQuery('#id_modal_edit_textarea').val(array_text_byword[jQuery(this).val()]);
@@ -741,8 +705,8 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
     jQuery("input[name=radio_mode]").change(function() {
         if (jQuery('input[name=radio_mode]:checked').val() == 'custom_mode') {
-            
-            if(array_text_byword != null && array_text_byword.length > 0){
+
+            if (array_text_byword != null && array_text_byword.length > 0) {
                 words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
                 countOfWord = words.length;
             }
@@ -752,8 +716,7 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
             resetTimer(init_timer);
         } else if (jQuery('input[name=radio_mode]:checked').val() == 'option3_mode') // M- added option3 
         {
-            if(array_text_bysentence != null && array_text_bysentence.length > 0)
-            {
+            if (array_text_bysentence != null && array_text_bysentence.length > 0) {
                 words = array_text_bysentence[jQuery('#select_option3').val()].split('&&');
                 countOfWord = words.length;
             }
@@ -776,138 +739,88 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
         }
     });
 
-  
+
     jQuery('#saveBtn2').click(function() {
         let csvContent = "title,content\r\n";
-        let postData= [];
-        
-        var text = jQuery('#id_modal_edit_textarea').val().replaceAll(/\n/g, " ").replaceAll(/["']/g, "");
+        var text = jQuery('#id_modal_edit_textarea').val().replaceAll(/\n/g, " ");
+        text = text.replaceAll(/["']/g, "");
         text = text.replaceAll(',', ' ');
         array_text_byword[jQuery("#id_modal_select")[0].selectedIndex] = text;
-
-        postData.push(array_id_byword[jQuery("#id_modal_select")[0].selectedIndex]);
-        postData.push(text);
-        var url = "<?= site_url('homecontroller/saveOption2');?>";
-        jQuery.post(url, {
-            option2: postData
-        }, function(data) {}).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
         initSelects();
+        if (array_text_byword != null && array_text_byword.length > 0) {
+            words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
+            countOfWord = words.length;
+        }
     });
-// Option 3 Save function
+    // Option 3 Save function
     jQuery('#saveBtn3').click(function() {
         var texts = jQuery('.edit-tab .sentence-text');
         var arrData = "";
-        for(var i = 0; i < texts.length; i++)
-        {
-            arrData += texts[i].innerText.replaceAll(/["']/g, "") + "&&";       
+        for (var i = 0; i < texts.length; i++) {
+            arrData += texts[i].innerText + "&&";
         }
-        arrData = arrData.substring(0, arrData.length-2);
-        let postData= [];
-        postData.push(array_id_bysentence[jQuery('#select_option3').val()]);
-        postData.push(arrData);
-        var url = "<?= site_url('homecontroller/saveOption3');?>";
-        jQuery.post(url, {
-            postdata: postData
-        }, function(data) {
-            array_text_bysentence[jQuery('#select_option3').val()] = arrData;
-            initSelects();
-        }).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
+        arrData = arrData.substring(0, arrData.length - 2);
+        array_text_bysentence[jQuery('#select_option3').val()] = arrData;
+        initSelects();
+        if (array_text_bysentence != null && array_text_bysentence.length > 0) {
+            words = array_text_bysentence[jQuery('#select_option3').val()].split('&&');
+            countOfWord = words.length;
+        }
         closeModal3();
     });
 
-    // Add new function
+    // Add new function for option 3
     jQuery('.add-new').click(function() {
-        if(jQuery('#new-tab-title').val() == '') return;
-        console.log(jQuery('#new-tab-title').val());
-        console.log(jQuery('#new-tab-title').val().replaceAll(/["']/g, ""));
+        if (jQuery('#new-tab-title').val() == '') return;
         var texts = jQuery('.new-tab .sentence-text');
         var arrData = "";
-        for(var i = 0; i < texts.length; i++)
-        {
-            arrData += texts[i].innerText.replaceAll(/["']/g, "") + "&&";       
+        for (var i = 0; i < texts.length; i++) {
+            arrData += texts[i].innerText + "&&";
         }
-        if(arrData.length > 2)
-        {
-            arrData = arrData.substring(0, arrData.length-2);
+        if (arrData.length > 2) {
+            arrData = arrData.substring(0, arrData.length - 2);
         }
-        var postdata = [];
-        postdata.push(jQuery('#new-tab-title').val().replaceAll(/["']/g, ""));
-        postdata.push(arrData);
-        var url = "<?= site_url('homecontroller/addoption3');?>";
-        jQuery.post(url, {
-            postdata: postdata
-        }, function(data) {
-            array_text_bysentence.push(arrData);
-            array_title_bysentence.push(jQuery('#new-tab-title').val());
-            array_id_bysentence.push(data);
-            initSelects();
-            if(array_text_bysentence != null && array_text_bysentence.length > 0){
-                words = array_text_bysentence[jQuery('#select_option3').val()].split('&&');
-                countOfWord = words.length;
-            }
-            closeModal3();
-        }).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
-    });
-    
-    jQuery('#removeBtn2').click(function() {
-        
-        var url = "<?= site_url('homecontroller/removeOption2');?>";
-        jQuery.post(url, {
-            postdata: array_id_byword[jQuery("#id_modal_select")[0].selectedIndex],
-        }, function(data) {
-            
-            array_title_byword.splice(jQuery("#id_modal_select")[0].selectedIndex, 1);
-            array_text_byword.splice(jQuery("#id_modal_select")[0].selectedIndex, 1);
-            array_id_byword.splice(jQuery("#id_modal_select")[0].selectedIndex, 1);
-            initSelects();
-            if(array_text_byword != null && array_text_byword.length > 0){
-                words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
-                countOfWord = words.length;
-            }
-            else
-            {
-                words = [];
-                countOfWord = 0;
-            }
 
-        }).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
+        array_text_bysentence.push(arrData);
+        array_title_bysentence.push(jQuery('#new-tab-title').val());
+        initSelects();
+        if (array_text_bysentence != null && array_text_bysentence.length > 0) {
+            words = array_text_bysentence[jQuery('#select_option3').val()].split('&&');
+            countOfWord = words.length;
+        }
+        jQuery('#new-tab-title').val(''); 
+        closeModal3();
+
+    });
+
+    jQuery('#removeBtn2').click(function() {
+
+        array_title_byword.splice(jQuery("#id_modal_select")[0].selectedIndex, 1);
+        array_text_byword.splice(jQuery("#id_modal_select")[0].selectedIndex, 1);
+        initSelects();
+        if (array_text_byword != null && array_text_byword.length > 0) {
+            words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
+            countOfWord = words.length;
+        } else {
+            words = [];
+            countOfWord = 0;
+        }
 
     });
 
     jQuery('#addBtn2').click(function() {
         if (jQuery('#new_title').val() == '' || jQuery('#id_modal_new_textarea').val() == '') return;
         var textContent = jQuery('#id_modal_new_textarea').val();
-        textContent = textContent.replaceAll(/\n/g, " ").replaceAll(/["']/g, "");
-        textContent = textContent.replaceAll(',', " ");
-        var url = "<?= site_url('homecontroller/addOption2');?>";
-        var postdata = [];
-        postdata.push(jQuery('#new_title').val().replaceAll(/["']/g, ""));
-        postdata.push(jQuery('#id_modal_new_textarea').val().replaceAll(/["']/g, ""));
-        jQuery.post(url, {
-            postdata: postdata
-        }, function(data) {
-            console.log(data);
-            array_id_byword.push(data);
-            array_title_byword.push(jQuery('#new_title').val().replaceAll(/["']/g, ""));
-            array_text_byword.push(textContent.replaceAll(/["']/g, ""));
-            jQuery('#exit_modal').click();
-            initSelects();
-            if(array_text_byword != null && array_text_byword.length > 0){
-                words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
-                countOfWord = words.length;
-            }
-        }).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
-
+        array_title_byword.push(jQuery('#new_title').val().replaceAll(/["']/g, ""));
+        array_text_byword.push(textContent);
+        jQuery('#new_title').val('');
+        jQuery('#id_modal_new_textarea').val('');
+        jQuery('#exit_modal').click();
+        initSelects();
+        if (array_text_byword != null && array_text_byword.length > 0) {
+            words = array_text_byword[jQuery('#select_sentence').val()].split(' ');
+            countOfWord = words.length;
+        }
     });
 
 
@@ -1000,13 +913,12 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
             $('userActions').el.innerHTML = '';
             $('userActions').el.appendChild(p);
         }
-        
+
     };
 
     function takeshot() {
         let div =
             document.getElementById('cardPile');
-
         html2canvas(div).then(
             function(canvas) {
                 document
@@ -1023,8 +935,8 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
             jQuery('.list').addClass("show-modal-3")
             let sentence = array_text_bysentence[jQuery("#select_option3").val()],
                 words = sentence.split("&&");
-                countOfWord = words.length;
-                
+            countOfWord = words.length;
+
             document.querySelector('#modal3-edit-title').textContent = array_title_bysentence[jQuery("#select_option3").val()]
             words.forEach(part => {
                 addSentence(part)
@@ -1033,34 +945,36 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
         })
 
 
-    function addSentence(sentenceText){/* Add sentence */
+    function addSentence(sentenceText) {
+        /* Add sentence */
         let sentencesContainer = jQuery(".edit-tab .sentences-container")
-       
+
         jQuery('#add-sentence-text').val('')
-        if(!sentenceText.replace(/\s/g, '').length){
+        if (!sentenceText.replace(/\s/g, '').length) {
             //hello
-        }else{
+        } else {
             sentencesContainer.append(
-            `<div class="sentence">
+                `<div class="sentence">
                 <p class="sentence-text" > ${sentenceText} </p>
                 <span class="progress-icon"><i class="fas fa-minus-circle"></i></span>
             </div>`
             )
-            if(array_text_bysentence != null && array_text_bysentence.length > 0) 
-            {
+            if (array_text_bysentence != null && array_text_bysentence.length > 0) {
                 let sentence = array_text_bysentence[jQuery("#select_option3").val()];
-                if(!sentence.includes(sentenceText)){
-                    sentence += "  " +sentenceText
+                if (!sentence.includes(sentenceText)) {
+                    sentence += "  " + sentenceText
                 }
             }
-            
+
         }
         jQuery(".edit-tab .sentence").click(editSentenceModal3)
         jQuery(".progress-icon").click(removeSentence)
-        
+
     }
 
-    jQuery(".edit-tab .upper button").click(()=>{addSentence(jQuery("#add-sentence-text").val())})
+    jQuery(".edit-tab .upper button").click(() => {
+        addSentence(jQuery("#add-sentence-text").val())
+    })
 
     function removeSentence() {
         jQuery(this).parent().remove()
@@ -1076,13 +990,13 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
 
     function editSentenceModal3() {
         let text = jQuery(this).children("p.sentence-text").text();
-        jQuery(this).attr('id','selectedElem');
+        jQuery(this).attr('id', 'selectedElem');
         jQuery(".modal3-edit-tab .modal_edit_text").removeAttr("hidden")
         jQuery(".option3-modal .modal3-edit-tab").addClass("show")
         jQuery("#id_modal3_edit_textarea").val(text)
     }
 
-    jQuery('#saveElemChange').click(function (){
+    jQuery('#saveElemChange').click(function() {
 
         jQuery('#selectedElem').children("p.sentence-text").text(jQuery("#id_modal3_edit_textarea").val());
         jQuery('#selectedElem').removeAttr('id');
@@ -1100,62 +1014,51 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
         }
     });
 
-    function deleteOption3()
-    {
-        var postdata = [];
-        postdata.push(jQuery('#new-tab-title').val());
-        
-        var url = "<?= site_url('homecontroller/removeOption3');?>";
-        let postData = array_id_bysentence[jQuery("#select_option3").val()];
-        jQuery.post(url, {
-            postdata: postData
-        }, function(data) {
-            array_title_bysentence.splice(jQuery("#select_option3")[0].selectedIndex, 1);
-            array_text_bysentence.splice(jQuery("#select_option3")[0].selectedIndex, 1);
-            array_id_bysentence.splice(jQuery("#select_option3")[0].selectedIndex, 1);
-            initSelects();
-            if(array_text_bysentence != null && array_text_bysentence.length > 0){
-                words = array_text_bysentence[jQuery('#select_option3').val()].split(' ');
-                countOfWord = words.length;
-            }
-            else
-            {
-                words = [];
-                countOfWord = 0;
-            }
+    function deleteOption3() {
+        array_title_bysentence.splice(jQuery("#select_option3")[0].selectedIndex, 1);
+        array_text_bysentence.splice(jQuery("#select_option3")[0].selectedIndex, 1);
+        initSelects();
+        if (array_text_bysentence != null && array_text_bysentence.length > 0) {
+            words = array_text_bysentence[jQuery('#select_option3').val()].split(' ');
+            countOfWord = words.length;
+        } else {
+            words = [];
+            countOfWord = 0;
+        }
 
-            closeModal3();
-        }).fail(function(jqXHR) {
-            alert(jqXHR.status + ' ' + jqXHR.statusText + ' $.post failed!');
-        });
+        closeModal3();
+
     }
 
-    jQuery(".list .tabs button").click(function() /* SWitch between tabs in modal 3 */
-    {
+    jQuery('#edit_time').bind('input', function() {
+        init_timer = jQuery(this).val(); // get the current value of the input field.
+    });
+
+    jQuery(".list .tabs button").click(function() /* SWitch between tabs in modal 3 */ {
         var tabs = document.querySelectorAll(".tab"),
             target = this.value;
 
         for (let i = 0; i < tabs.length; i++) {
 
             const element = tabs[i];
-            if (element.classList.contains(target)){
+            if (element.classList.contains(target)) {
                 jQuery(element).removeAttr("hidden")
-            }
-            else{
-                jQuery(element).attr("hidden",true)
+            } else {
+                jQuery(element).attr("hidden", true)
             }
         }
 
     });
 
-    function addSubsentence(sentenceText){/*-------- Add Title -------------*/
+    function addSubsentence(sentenceText) {
+        /*-------- Add Title -------------*/
         let sentencesContainer = jQuery(".new-tab .sentences-container")
         jQuery('#new-tab-add-sentence-text').val('')
-        if(!sentenceText.replace(/\s/g, '').length){
+        if (!sentenceText.replace(/\s/g, '').length) {
             //hello
-        }else{
+        } else {
             sentencesContainer.append(
-            `<div class="sentence">
+                `<div class="sentence">
                 <p class="sentence-text" > ${sentenceText} </p>
                 <span class="progress-icon"><i class="fas fa-minus-circle"></i></span>
             </div>`
@@ -1164,23 +1067,19 @@ for($k = 0; $k < count($array_title_bysentence); $k++)
         jQuery(".sentence").click(editSentenceModal3)
         jQuery(".progress-icon").click(removeSentence)
     }
-    jQuery(".new-tab .upper button").click(()=>{addSubsentence(jQuery("#new-tab-add-sentence-text").val())})
-    
+    jQuery(".new-tab .upper button").click(() => {
+        addSubsentence(jQuery("#new-tab-add-sentence-text").val())
+    })
 
-    jQuery('#userActions').droppable({
-            over: function() {
-                //alert('working!');
-                jQuery('.ui-draggable-dragging').remove();
-            }
-        });
+
     jQuery('#trash').droppable({
-                    over: function() {
-                        jQuery('.ui-draggable-dragging').remove();
-                        jQuery('.ui-selected').remove();
-                    }
-        });
+        over: function() {
+            jQuery('.ui-draggable-dragging').remove();
+            jQuery('.ui-selected').remove();
+        }
+    });
 
-    window.onafterprint = function(){
-    jQuery('#output').empty();
-}
+    window.onafterprint = function() {
+        jQuery('#output').empty();
+    }
 </script>

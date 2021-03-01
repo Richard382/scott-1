@@ -1067,3 +1067,31 @@ body {
 	top: 0;
 	left: -2400px;
 }
+
+ #header3-c
+{
+    height:100vh;
+}
+
+ #header3-c .container
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+#header3-c p 
+{
+  font-size: calc(20px + (17 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+section h1 
+{
+    padding-top: 40px !important;
+}
+
+#gallery2-i .container 
+{
+  display:flex;
+}

@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class home_model extends CI_Model {
+class Home_model extends CI_Model {
     
     var $table_random_en = "randomwordtable_en";
     var $table_random_de = "randomwordtable_de";

@@ -172,11 +172,11 @@
         <div class="container align-center">
             <div class="row justify-content-md-center">
                 <div class="mbr-white col-md-10">
-                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">Collage Game</h1>
+                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">Text Creation Game</h1>
 
                     <p class="mbr-text pb-3 mbr-fonts-style display-5">
-                        The aim of the game is to create a word collage, a
-                            poem or a situation with words from all the words.</p>
+                         Literary technique in which words or sentences can be
+                        rearranged to create a new text.</p>
                     <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4"
                             href="index.html#header4-k">Start Game</a>
                     </div>
@@ -190,33 +190,27 @@
         </div>
     </section>
 
-    <section class="header3 cid-sn6OBUDEu5 mbr-parallax-background" id="header3-c" style="background:darkcyan; height:100vh;">
-        <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(35, 35, 35);">
-        </div>
-        
-        <div class="container" style="height:100%;">
-        <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1" style="text-align:center; color:#fff;">INTRO</h1>    
-        <div class="media-container-row" style="position:absolute; transform:translate(0%, -50%); top:50%;">
-                <div class="mbr-figure" style="width: 200%;">
-                    <img src="<?php echo base_url();?>assets/images/image1.jpg" alt="Mobirise" title="">
-                </div>
+    <section class="header3 cid-sn6OBUDEu5 mbr-parallax-background" id="header3-c" style="background:#28527a;">
+    <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1" style="text-align:center; color:#fff;">INTRO</h1>    
+        <div class="container" >
+       
+        <div class="media-container-row" >
 
                 <div class="media-content">
                    
                     <h3 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-2">Word
                         Collages</h3>
                     <div class="mbr-section-text mbr-white pb-3 ">
-                        <p class="mbr-text mbr-fonts-style display-7">The aim of the game is to create a word collage, a
-                            poem or a situation with words from all the words. All words should be used, even if it is
-                            challenging and takes some time. It is precisely when repeatedly rearranged and joined
-                            together that spaces open up to create unusual sentences. The joy lies in improvising within
-                            the given framework. In the best case it is loosening up the patterns of thought and you
-                            start painting with words. Courage for gaps and emptiness between words are also required.
-                            Initially illogical word-worlds can suddenly form into a new logic or a an unexpected
-                            dream-like or surreal scenario or dada poem is emerging
+                        <p class="mbr-text mbr-fonts-style display-7">“Intro” In the first two options, the aim of the game is to create a word collage, a poem
+                            or a situation with words from all the words. All words should be used. When it comes
+                            to repositioning and putting words together, new spaces open up to create unusual
+                            sentences. Using lateral thinking is encouraged by playing within the limits. The
+                            emptiness and gap between words and sentences can develop their own
+                            expressiveness. You may suddenly notice that a new logic is emerging. The third
+                            variation is dedicated to the same principle only you use sentences instead of words,
+                            also known as the cut-up „technique.
                             <br>
-                            <br>"Our game is for student. All student can play this game anytime."
-                            <br>
+                            
                          
                         </p>
                     </div>
@@ -228,6 +222,7 @@
     </section>
 
     <section class="counters1 counters cid-sn6SMRfOEX" id="counters1-f">
+    <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-2" style="padding-top:20px;">Inspired by&nbsp;</h1>
         <div class="container">
             <div class="container pt-4 mt-2">
                 <div class="media-container-row">
@@ -236,7 +231,6 @@
                         <a href="https://www.swr.de/swr2/literatur/bookreview-swr-412.html">  
                             <div class="panel-item p-3">
                                 <div class="card-img pb-3">
-                                        <!-- <span class="mbr-iconfont mbrib-layers"></span> -->
                                         <img src="<?php echo base_url();?>assets/images/image2.jpg" alt="" style="margin-bottom:20px">
                                 </div>
 
@@ -253,10 +247,9 @@
 
 
                     <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
-                        <a href="https://www.openculture.com/2016/07/how-to-jumpstart-your-creative-process-with-william-s-burroughs-cut-up-technique.html">
+                        <a href="https://www.faena.com/aleph/cut-up-the-creative-technique-used-by-burroughs-dylan-bowie-and-cobain">
                             <div class="panel-item p-3">
                                 <div class="card-img pb-3">
-                                    <!-- <span class="mbr-iconfont mobi-mbri-contact-form mobi-mbri"></span> -->
                                     <img src="<?php echo base_url();?>assets/images/image3.jpg" style="margin-bottom:20px" alt="">
                                 </div>
                                 <div class="card-text">
@@ -275,7 +268,6 @@
                         <a href="https://en.wikipedia.org/wiki/Cut-up_technique">
                             <div class="panel-item p-3">
                                 <div class="card-img pb-3">
-                                    <!-- <span class="mbr-iconfont mbrib-growing-chart"></span> -->
                                     <img src="<?php echo base_url();?>assets/images/image4.jpg" alt="" style="margin-bottom:20px">
                                 </div>
                                 <div class="card-text">
@@ -510,16 +502,39 @@
 
     <section class="mbr-gallery mbr-slider-carousel cid-sn6XE8MPnG" id="gallery2-i">
         <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-2" style="padding-top:20px;">Projects</h1>
-        <div class="container row" style="display:flex; margin:auto;">
-            <div class="col-6">
-                <iframe width="100%" height="100%"
-                    src="https://www.youtube.com/watch?v=6nlW4EbxTD8">
-                </iframe>
+        <div class="container media-container-row">
+                
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <a href="https://www.youtube.com/watch?v=6nlW4EbxTD8">  
+                            <div class="panel-item p-3">
+                                <div class="card-img pb-3">
+                                        <img src="<?php echo base_url();?>assets/images/video-image1.jpg" alt="" style="margin-bottom:20px">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <a href="https://www.youtube.com/watch?v=m1InCrzGIPU">
+                            <div class="panel-item p-3">
+                                <div class="card-img pb-3">
+                                    <img src="<?php echo base_url();?>assets/images/video-image2.png" style="margin-bottom:20px" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <a href="https://www.openculture.com/2016/07/how-to-jumpstart-your-creative-processwith-william-s-burroughs-cut-uptechnique.html">
+                            <div class="panel-item p-3">
+                                <div class="card-img pb-3">
+                                    <img src="<?php echo base_url();?>assets/images/video-image3.jpg" alt="" style="margin-bottom:20px">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
             </div>
-            <div class="col-6">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=m1InCrzGIPU"></iframe>
-            </div>
-        </div>
 
     </section>
 
@@ -591,13 +606,9 @@
                                 </div>
                             </div>
                             <div class="dragArea row">
-                                <div class="col-md-6  form-group" data-for="name">
+                                <div class="col-md-12  form-group" data-for="name">
                                     <input type="text" name="name" placeholder="Your Name" data-form-field="Name"
                                         required="required" class="form-control input display-7" id="name-form4-1">
-                                </div>
-                                <div class="col-md-6  form-group" data-for="phone">
-                                    <input type="text" name="phone" placeholder="Phone Number" data-form-field="Phone"
-                                        required="required" class="form-control input display-7" id="phone-form4-1">
                                 </div>
                                 <div data-for="email" class="col-md-12  form-group">
                                     <input type="text" name="email" placeholder="Email" data-form-field="Email"
